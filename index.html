@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYRA - Roblox Script</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        header, section, footer {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero {
+            background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #aaa;
+            margin-top: 20px;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .cta-button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border: none;
+            background: white;
+            color: black;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.1);
+            background: #ccc;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .feature {
+            background: #111;
+            padding: 30px;
+            border-radius: 10px;
+            width: 280px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        footer {
+            font-size: 0.9em;
+            color: #666;
+            background-color: #0a0a0a;
+            padding: 30px 0;
+        }
+
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>SYRA</h1>
+        <p>Elite Roblox Automation Script. Powerful. Fast. Undetected.</p>
+        <a href="#get-started"><button class="cta-button">Get the Script</button></a>
+    </header>
+
+    <section class="features">
+        <div class="feature">
+            <h2>Auto Targeting</h2>
+            <p>Advanced prediction and tracking. Dominate any PvP scenario with precision.</p>
+        </div>
+        <div class="feature">
+            <h2>Anti-Ban Measures</h2>
+            <p>Stealth systems built to bypass detection. Stay safe while you automate.</p>
+        </div>
+        <div class="feature">
+            <h2>Real-time Tuning</h2>
+            <p>Auto-adjusts to enemy behavior. Continuous self-learning prediction.</p>
+        </div>
+    </section>
+
+    <section id="get-started">
+        <h2>How to Get Started</h2>
+        <p>Download the script from our GitHub, inject it with your preferred executor, and dominate the game.</p>
+        <a href="https://github.com/yourusername/syra" target="_blank">
+            <button class="cta-button">View on GitHub</button>
+        </a>
+    </section>
+
+    <footer>
+        &copy; 2025 Syra. All rights reserved. | Designed for Roblox
+    </footer>
+
+</body>
+</html>
