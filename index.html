@@ -1,135 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SYRA - Roblox Script</title>
-    <style>
-        body {
-            margin: 0;
-            background-color: #000;
-            color: #fff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>syra.v</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ff007a; /* PINK BACKGROUND */
+      color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+      filter: blur(5px);
+      opacity: 0;
+      transition: filter 3s ease, opacity 3s ease;
+    }
 
-        header, section, footer {
-            padding: 60px 20px;
-            text-align: center;
-        }
+    body.loaded {
+      filter: blur(0);
+      opacity: 1;
+    }
 
-        .hero {
-            background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
-            padding-top: 100px;
-            padding-bottom: 100px;
-        }
+    header {
+      background-color: #ff007a;
+      color: white;
+      padding: 15px 20px;
+      text-align: left;
+      border: 2px solid white;
+      margin: 10px;
+      border-radius: 5px;
+      position: relative;
+    }
 
-        .hero h1 {
-            font-size: 3.5em;
-            animation: fadeInDown 1s ease-in-out;
-        }
+    h1 {
+      margin: 0;
+      font-size: 1.25em;
+      text-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
 
-        .hero p {
-            font-size: 1.2em;
-            color: #aaa;
-            margin-top: 20px;
-            animation: fadeInUp 1.5s ease-in-out;
-        }
+    .description {
+      margin: 20px auto;
+      max-width: 800px;
+      padding: 0 20px;
+      font-size: 1.2em;
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+    }
 
-        .cta-button {
-            margin-top: 30px;
-            padding: 15px 30px;
-            font-size: 1.1em;
-            border: none;
-            background: white;
-            color: black;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      text-align: center;
+    }
 
-        .cta-button:hover {
-            transform: scale(1.1);
-            background: #ccc;
-        }
+    input {
+      padding: 12px;
+      width: 70%;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
 
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
+    button {
+      padding: 12px 24px;
+      background-color: white;
+      color: #ff007a;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
 
-        .feature {
-            background: #111;
-            padding: 30px;
-            border-radius: 10px;
-            width: 280px;
-            transition: transform 0.3s ease;
-        }
+    button:hover {
+      transform: scale(1.05);
+    }
 
-        .feature:hover {
-            transform: translateY(-10px);
-        }
+    .result {
+      margin-top: 20px;
+      font-size: 1em;
+    }
 
-        footer {
-            font-size: 0.9em;
-            color: #666;
-            background-color: #0a0a0a;
-            padding: 30px 0;
-        }
+    .avatar {
+      border-radius: 50%;
+      margin: 10px 0;
+      border: 2px solid white;
+    }
 
-        @keyframes fadeInDown {
-            0% { opacity: 0; transform: translateY(-40px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(40px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            .features {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.75em;
+      color: rgba(255,255,255,0.7);
+      border-top: 1px solid white;
+      margin-top: auto;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>syra.v</h1>
+  </header>
 
-    <header class="hero">
-        <h1>SYRA</h1>
-        <p>Elite Roblox Automation Script. Powerful. Fast. Undetected.</p>
-        <a href="#get-started"><button class="cta-button">Get the Script</button></a>
-    </header>
+  <div class="description">
+    Enter a Roblox username to view profile info.
+  </div>
 
-    <section class="features">
-        <div class="feature">
-            <h2>Auto Targeting</h2>
-            <p>Advanced prediction and tracking. Dominate any PvP scenario with precision.</p>
-        </div>
-        <div class="feature">
-            <h2>Anti-Ban Measures</h2>
-            <p>Stealth systems built to bypass detection. Stay safe while you automate.</p>
-        </div>
-        <div class="feature">
-            <h2>Real-time Tuning</h2>
-            <p>Auto-adjusts to enemy behavior. Continuous self-learning prediction.</p>
-        </div>
-    </section>
+  <div class="container">
+    <input type="text" id="username" placeholder="Enter Roblox username" />
+    <br />
+    <button onclick="lookup()">Search</button>
 
-    <section id="get-started">
-        <h2>How to Get Started</h2>
-        <p>Download the script from our GitHub, inject it with your preferred executor, and dominate the game.</p>
-        <a href="https://github.com/yourusername/syra" target="_blank">
-            <button class="cta-button">View on GitHub</button>
-        </a>
-    </section>
+    <div class="result" id="result"></div>
+  </div>
 
-    <footer>
-        &copy; 2025 Syra. All rights reserved. | Designed for Roblox
-    </footer>
+  <footer>&copy; 2025 syraa.dev | Built by Syra</footer>
 
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+
+    async function lookup() {
+      const username = document.getElementById("username").value.trim();
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = "Searching...";
+
+      try {
+        // Step 1: Get user ID
+        const res = await fetch("https://api.roproxy.com/v1/usernames/users", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ usernames: [username], excludeBannedUsers: false })
+        });
+
+        const userData = await res.json();
+        if (!userData.data || userData.data.length === 0) {
+          resultDiv.innerHTML = "User not found.";
+          return;
+        }
+
+        const user = userData.data[0];
+        const userId = user.id;
+
+        // Step 2: Get avatar and profile
+        const [avatarRes, descRes] = await Promise.all([
+          fetch(`https://api.roproxy.com/v1/users/${userId}/avatar`),
+          fetch(`https://api.roproxy.com/v1/users/${userId}`)
+        ]);
+
+        const avatarData = await avatarRes.json();
+        const descData = await descRes.json();
+
+        const avatarUrl = `https://www.roblox.com/headshot-thumbnail/image?userId=${userId}&width=150&height=150&format=png`;
+
+        resultDiv.innerHTML = `
+          <img src="${avatarUrl}" class="avatar" width="100" height="100" />
+          <p><strong>Username:</strong> ${user.username}</p>
+          <p><strong>Display Name:</strong> ${user.displayName}</p>
+          <p><strong>User ID:</strong> ${userId}</p>
+          <p><strong>Status:</strong> ${descData.statusMessage || "No status"}</p>
+          <p><strong>Description:</strong><br>${descData.description || "No bio"}</p>
+        `;
+      } catch (err) {
+        resultDiv.innerHTML = "Error fetching user data.";
+        console.error(err);
+      }
+    }
+  </script>
 </body>
 </html>
